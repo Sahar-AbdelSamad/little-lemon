@@ -1,9 +1,32 @@
+.hamburgerbtn {
+  background-image: url(../assets/icons_assets/🦆\ icon\ _hamburger\ menu.svg);
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: white;
+  margin-left: 2px;
+}
+
+.basket {
+  background-image: url(../assets/icons_assets/Basket.svg);
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
+}
+
 .logo {
   background-image: url(../assets/icons_assets/Logo.svg);
   background-size: 100% 100%;
-  width: 50px;
-  height: 20px;
-  margin-right: 20px;
+  width: 150px;
+  height: 50px;
+}
+
+.navbar {
+  display: none;
 }
 
 .header,
@@ -14,37 +37,11 @@
   justify-content: space-between;
 }
 
-nav {
-  width: 100%;
-}
-
-.navbar ul,
-.footer,
-.footer ul {
-  list-style-type: none;
-  font-family: Karla;
-  font-size: 5px;
-  font-weight: 800;
-  padding: 0;
-  color: var(--secondary-color-black);
-}
-
-.navbar a,
-.footer a {
-  text-decoration: none;
-  color: var(--secondary-color-black);
-}
-
-.footer .navbar ul {
-  flex-direction: column;
-  align-items: start;
-}
-
 .footer_logo {
   background-image: url(../assets/icons_assets/footerlogo.png);
   background-size: 100% 100%;
-  width: 40px;
-  height: 80px;
+  width: 150px;
+  height: 300px;
 }
 
 .footer_links {
@@ -52,4 +49,47 @@ nav {
   justify-content: space-between;
   flex: 1;
   margin-left: 20px;
+}
+
+@media screen and (min-width:768px) {
+  .hamburgerbtn,
+  .basket {
+    display: none;
+  }
+
+  .logo {
+    margin-right: 40px;
+    width: 200px;
+    height: 70px;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .navbar ul,
+  .footer,
+  .footer ul {
+    list-style-type: none;
+    font-family: Karla;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 0;
+    color: var(--secondary-color-black);
+  }
+
+  .navbar a,
+  .footer a {
+    text-decoration: none;
+    color: var(--secondary-color-black);
+  }
+
+  .footer .navbar ul {
+    flex-direction: column;
+    align-items: start;
+  }
 }

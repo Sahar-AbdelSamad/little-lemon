@@ -6,7 +6,9 @@ import { NavLink } from 'react-router-dom';
 function Header() {
   return (
     <header className='header'>
+      <button className='hamburgerbtn'></button>
       <NavLink to='/'><div className='logo'/></NavLink>
+      <button className='basket'></button>
       <Nav/>
     </header>
   );
