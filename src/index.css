@@ -1,27 +1,16 @@
-@font-face {
-  font-family: Markazi;
-  src: url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
-}
-
-@font-face {
-  font-family: Karla;
-  src: url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
-}
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
 
 :root {
-  --primary-color-yello: #F4CE14;
+  --primary-color-yellow: #F4CE14;
   --primary-color-green: #495E57;
   --secondary-color-pink: #EE9972;
   --secondary-color-pinkwhite: #FBDABB;
   --secondary-color-white: #EDEFEE;
   --secondary-color-black: #333333;
+  --secondary-color-grey: #7aabba;
 }
 
-body {
-  margin: 0px 10px;
-}
-
-@media screen and (min-width:768px) {
+/* @media screen and (min-width:768px) {
   body {
     width: 90%;
     margin: 0 auto;
@@ -32,4 +21,4 @@ body {
   body {
     width: 80%;
   }
-}
+} */
