@@ -1,0 +1,145 @@
+/****** Hero Section ******/
+
+.hero {
+  background-color: var(--primary-color-green);
+}
+
+.hero-section {
+  padding: 0 15px 20px;
+}
+
+.hero-title,
+.location {
+  margin: 0;
+  font-family: 'Markazi Text';
+}
+
+.hero-title {
+  color: var(--primary-color-yellow);
+  font-size: 40px;
+}
+
+.location {
+  color: var(--secondary-color-white);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.hero-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 9px;
+}
+
+.description {
+  font-family: 'Karla';
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--secondary-color-white);
+  margin-bottom: 30px;
+  width: 60%;
+}
+
+.img-hero {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+}
+
+.btn {
+  font-size: 10px;
+  padding: 5px 8px;
+  background-color: var(--primary-color-yellow);
+  color: var(--secondary-color-black);
+  font-family: 'Karla';
+  font-weight: 800;
+  border: none;
+  border-radius: 16px;
+}
+
+/****** Hero Section ******/
+.highlights {
+  color: var(--secondary-color-black);
+  padding: 0 10px;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+.mobile-delivery h2 {
+  font-family: 'Karla';
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.food-btns {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--secondary-color-white);
+}
+
+.delivery-btn {
+  background-color: var(--secondary-color-white);
+  margin-right: 7px;
+  white-space:nowrap;
+}
+
+@media screen and (min-width:768px) {
+  /****** Hero Section ******/
+
+  .hero-section {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 64px;
+  }
+  
+  .location {
+    font-size: 40px;
+  }
+  
+  .description {
+    font-size: 18px;
+    width: 30%;
+  }
+
+  .hero-description {
+    align-items: flex-start;
+    position: relative;
+    margin-top: 0px;
+  }
+  
+  .img-hero {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: -60%;
+    right: -1%;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 14px 40px;
+  }
+
+  /****** Hero Section ******/
+
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .hero-section {
+    width: 80%;
+  }
+}
