@@ -61,8 +61,7 @@
   color: var(--secondary-color-black);
 }
 
-.navbar a,
-.footer a {
+a {
   text-decoration: none;
   color: var(--secondary-color-black);
 }
