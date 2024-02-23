@@ -34,21 +34,24 @@
 
 .description {
   font-family: 'Karla';
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--secondary-color-white);
   margin-bottom: 30px;
   width: 60%;
 }
 
-.img-hero {
+.img {
   width: 100px;
   height: 100px;
+}
+
+.img-hero {
   border-radius: 16px;
 }
 
 .btn {
-  font-size: 10px;
+  font-size: 12px;
   padding: 5px 8px;
   background-color: var(--primary-color-yellow);
   color: var(--secondary-color-black);
@@ -87,6 +90,38 @@
   white-space:nowrap;
 }
 
+.specials-cards {
+  font-family: 'Karla';
+}
+
+.specials-cards>div {
+  border-bottom: 1px solid var(--secondary-color-white);
+}
+
+.food-title {
+  font-size: 18;
+  font-weight: 700;
+}
+
+.specials-description {
+  font-weight: 400;
+  font-size: 16px;
+  max-width: 65ch;
+  overflow-y: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+}
+
+.img-specials {
+  float: inline-end;
+}
+
+.specials-description,
+.price-mobile {
+  color: #04040475;
+}
+
 @media screen and (min-width:768px) {
   /****** Hero Section ******/
 
@@ -113,7 +148,7 @@
     position: relative;
     margin-top: 0px;
   }
-  
+
   .img-hero {
     width: 300px;
     height: 400px;
@@ -135,6 +170,56 @@
 
   .hide-desktop {
     display: none;
+  }
+
+  .foods-specials {
+    margin: 115px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .order-btn {
+    margin-right: 35px;
+    display: block;
+  }
+
+  .specials-cards {
+    display: flex;
+    gap: 45px;
+    flex-wrap: wrap;
+  }
+
+  .specials-cards>div {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    background-color: var(--secondary-color-white);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .specials-description {
+    margin: 15px 10px;
+    -webkit-line-clamp: 5;
+  }
+
+  .img-specials {
+    border-radius: 16px 16px 0 0;
+    width: 100%;
+    height: 145px;
+  }
+
+  .card-title-desktop {
+    display: flex;
+    margin: 5px 10px;
+    justify-content: space-between;
+  }
+
+  .price-desktop {
+    color: red;
+  }
+
+  .delivery {
+    margin: 25px 10px;
   }
 }
 
