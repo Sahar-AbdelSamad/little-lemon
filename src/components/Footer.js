@@ -6,8 +6,8 @@ import Nav from './Nav';
 function Footer() {
   return (
     <footer className='footer'>
-      <NavLink to='/'><div className='footer_logo'/></NavLink>
-      <div className='footer_links'>
+      <NavLink to='/'><div className='footer-logo'/></NavLink>
+      <div className='footer-links'>
       <div>Doormat Navigation
         <Nav />
       </div>
