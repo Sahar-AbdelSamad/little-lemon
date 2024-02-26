@@ -10,15 +10,34 @@
   --secondary-color-grey: #7aabba;
 }
 
-/* @media screen and (min-width:768px) {
-  body {
-    width: 90%;
-    margin: 0 auto;
-  }
+body {
+  margin: 0;
 }
 
-@media screen and (min-width:1024px) {
-  body {
-    width: 80%;
-  }
-} */
+.markazi {
+  font-family: 'Markazi Text';
+}
+
+.Karla {
+  font-family: 'Karla';
+}
+
+.f-medium {
+  font-weight: 500;
+}
+
+.clr-white {
+  color: var(--secondary-color-white);
+}
+
+.clr-yellow {
+  color: var(--primary-color-yellow);
+}
+
+.clr-black {
+  color: var(--secondary-color-black);
+}
+
+.clr-grey {
+  color: var(--secondary-color-grey);
+}

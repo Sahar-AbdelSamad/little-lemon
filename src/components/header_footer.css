@@ -59,6 +59,7 @@
   font-weight: 700;
   padding: 0;
   color: var(--secondary-color-black);
+  margin-bottom: 0px;
 }
 
 a {
@@ -90,9 +91,7 @@ a {
 }
 
 @media screen and (min-width:768px) {
-  .header,
-  .footer,
-  .highlights {
+  .screen-width {
     width: 90%;
     margin: 0 auto;
   }
@@ -142,9 +141,7 @@ a {
 }
 
 @media screen and (min-width:1024px) {
-  .header,
-  .footer,
-  .highlights {
+  .screen-width {
     width: 80%;
   }
 }

@@ -5,7 +5,7 @@
 }
 
 .hero-section {
-  padding: 0 15px 20px;
+  padding: 0 10px 20px;
 }
 
 .hero-title,
@@ -26,17 +26,13 @@
 }
 
 .hero-description {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 9px;
 }
 
 .description {
-  font-family: 'Karla';
   font-size: 16px;
-  font-weight: 500;
-  color: var(--secondary-color-white);
   margin-bottom: 30px;
   width: 60%;
 }
@@ -50,7 +46,7 @@
   border-radius: 16px;
 }
 
-.btn {
+.bton {
   font-size: 12px;
   padding: 5px 8px;
   background-color: var(--primary-color-yellow);
@@ -61,7 +57,7 @@
   border-radius: 16px;
 }
 
-/****** Hero Section ******/
+/****** Highlights Section ******/
 .highlights {
   color: var(--secondary-color-black);
   padding: 0 10px;
@@ -158,7 +154,7 @@
     right: -1%;
   }
 
-  .btn {
+  .bton {
     font-size: 18px;
     padding: 14px 40px;
   }

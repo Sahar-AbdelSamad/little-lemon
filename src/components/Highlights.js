@@ -3,20 +3,20 @@ import { NavLink } from 'react-router-dom';
 
 function Highlights() {
   return (
-    <section className='highlights'>
+    <section className='highlights screen-width'>
         <div className='hide-mobile foods-specials'>
           <h2>This Week's Specials!</h2>
-          <button className='btn order-btn'>
+          <button className='bton order-btn'>
           <NavLink to='/orderonline'>Order Online</NavLink></button>
         </div>
         <div className='hide-desktop mobile-delivery'>
           <h2>Order for delivery!</h2>
           <div className='food-btns'>
-            <button className='delivery-btn btn'>Lunch</button>
-            <button className='delivery-btn btn'>Mains</button>
-            <button className='delivery-btn btn'>Desserts</button>
-            <button className='delivery-btn btn'>A La Carte</button>
-            <button className='delivery-btn btn'>Specials</button>
+            <button className='delivery-btn bton'>Lunch</button>
+            <button className='delivery-btn bton'>Mains</button>
+            <button className='delivery-btn bton'>Desserts</button>
+            <button className='delivery-btn bton'>A La Carte</button>
+            <button className='delivery-btn bton'>Specials</button>
           </div>
         </div>
         <div className='specials-cards'>

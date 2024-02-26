@@ -5,7 +5,7 @@ import Nav from './Nav';
 
 function Footer() {
   return (
-    <footer className='footer'>
+    <footer className='footer screen-width'>
       <NavLink to='/'><div className='footer-logo'/></NavLink>
       <div className='footer-links'>
       <div>Doormat Navigation
