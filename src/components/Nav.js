@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Nav() {
+function Nav({isOpen, handleToggle}) {
   const links = [
     {
       id:1,
@@ -35,10 +35,11 @@ function Nav() {
     }
   ]
   return (
-    <nav className='navbar'>
+    <nav className='navigation'>
+      {isOpen ? <img onClick={handleToggle} className='closebtn' src={require('../assets/icons_assets/closeicon.png')} alt='close icon'/> : ''}
       <ul>
         {links.map((link=>(
-          <li key={link.id}><NavLink to={link.path}>{link.text}</NavLink></li>
+          <li key={link.id}><NavLink to={link.path} onClick={handleToggle}>{link.text}</NavLink></li>
         )))}
       </ul>
     </nav>
