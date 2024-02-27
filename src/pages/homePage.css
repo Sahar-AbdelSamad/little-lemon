@@ -111,6 +111,7 @@
 
 .img-specials {
   float: inline-end;
+  object-fit: cover;
 }
 
 .specials-description,

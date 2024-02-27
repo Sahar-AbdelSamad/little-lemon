@@ -21,7 +21,7 @@ function Highlights() {
         </div>
         <div className='specials-cards'>
           <div>
-            <img className='img img-specials' src='./images/greek salad.jpg' alt='Greek salad image'/>
+            <img className='img img-specials' src={require('../assets/icons_assets/greek salad.jpg')} alt='Greek salad image'/>
             <div className='card-title-desktop'>
               <p className='food-title'>Greek Salad</p>
               <p className='hide-mobile price-desktop'>$12.99</p>
@@ -31,7 +31,7 @@ function Highlights() {
             <p className='hide-mobile delivery'>Order a delivery</p>
           </div>
           <div>
-            <img className='img img-specials' src='./images/bruchetta.svg' alt='Bruchetta image'/>
+            <img className='img img-specials' src={require('../assets/icons_assets/bruchetta.svg')} alt='Bruchetta image'/>
             <div className='card-title-desktop'>
               <p className='food-title'>Brushetta</p>
               <p className='hide-mobile price-desktop'>$7.99</p>
@@ -41,7 +41,7 @@ function Highlights() {
             <p className='hide-mobile delivery'>Order a delivery</p>
           </div>
           <div>
-            <img className='img img-specials' src='./images/lemon dessert.jpg' alt='Greek salad image'/>
+            <img className='img img-specials' src={require('../assets/icons_assets/lemon dessert.jpg')} alt='Greek salad image'/>
             <div className='card-title-desktop'>
               <p className='food-title'>Lemon Dessert</p>
               <p className='hide-mobile price-desktop'>$5.00</p>
@@ -51,7 +51,7 @@ function Highlights() {
             <p className='hide-mobile delivery'>Order a delivery</p>
           </div>
           <div>
-            <img className='img img-specials' src='./images/greek salad.jpg' alt='Greek salad image'/>
+            <img className='img img-specials' src={require('../assets/icons_assets/greek salad.jpg')} alt='Greek salad image'/>
             <div className='card-title-desktop'>
               <p className='food-title'>Greek Salad</p>
               <p className='hide-mobile price-desktop'>$12.99</p>
@@ -61,7 +61,7 @@ function Highlights() {
             <p className='hide-mobile delivery'>Order a delivery</p>
           </div>
           <div>
-            <img className='img img-specials' src='./images/greek salad.jpg' alt='Greek salad image'/>
+            <img className='img img-specials' src={require('../assets/icons_assets/greek salad.jpg')} alt='Greek salad image'/>
             <div className='card-title-desktop'>
               <p className='food-title'>Greek Salad</p>
               <p className='hide-mobile price-desktop'>$12.99</p>
