@@ -10,7 +10,7 @@ function Highlights() {
           <NavLink to='/orderonline'>Order Online</NavLink></button>
         </div>
         <div className='hide-desktop mobile-delivery'>
-          <h2>Order for delivery!</h2>
+          <h2 className='mt-4'>Order for delivery!</h2>
           <div className='food-btns'>
             <button className='delivery-btn bton'>Lunch</button>
             <button className='delivery-btn bton'>Mains</button>
