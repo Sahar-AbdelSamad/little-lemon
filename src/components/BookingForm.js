@@ -1,12 +1,16 @@
 import React from 'react';
-import AvailableTime from './AvailableTime';
 
 function BookingForm(props) {
   return (
     <form className='Karla' onSubmit={props.submitForm}>
       <div className='d-flex'>
         <input value={props.resdate} onChange={props.updateDate} name='res-date' className='w-50 rounded border-0 p-2 mt-5 mb-4 me-3' type='date' placeholder='Choose Date'/>
-        <AvailableTime restime={props.restime} updateTime={props.updateTime}/>
+        <select name='res-time' className='w-50 rounded border-0 p-2 mt-5 mb-4'>
+          <option>Choose Time</option>
+          {props.availableTimes.map(availableTime => (
+            <option key={availableTime}>{availableTime}</option>
+          ))}
+        </select>
       </div>
       <select value={props.resdiners} onChange={props.updateDiners} className='d-block rounded border-0 p-2 w-100' name="NumberOfDiners">
         <option>Number of Diners</option>
