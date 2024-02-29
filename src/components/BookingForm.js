@@ -4,15 +4,15 @@ function BookingForm(props) {
   return (
     <form className='Karla' onSubmit={props.submitForm}>
       <div className='d-flex'>
-        <input value={props.resdate} onChange={props.updateDate} name='res-date' className='w-50 rounded border-0 p-2 mt-5 mb-4 me-3' type='date' placeholder='Choose Date'/>
-        <select name='res-time' className='w-50 rounded border-0 p-2 mt-5 mb-4'>
+        <input value={props.resdate} onChange={props.updateDate} name='res-date' className='w-50 rounded border-0 p-2 mt-5 mb-4 me-3' type='date' placeholder='Choose Date' aria-label="Choose Date"/>
+        <select name='res-time' className='w-50 rounded border-0 p-2 mt-5 mb-4' aria-label="Choose Time">
           <option>Choose Time</option>
           {props.availableTimes.map(availableTime => (
             <option key={availableTime}>{availableTime}</option>
           ))}
         </select>
       </div>
-      <select value={props.resdiners} onChange={props.updateDiners} className='d-block rounded border-0 p-2 w-100' name="NumberOfDiners">
+      <select value={props.resdiners} onChange={props.updateDiners} className='d-block rounded border-0 p-2 w-100' name="NumberOfDiners" aria-label="Choose number of diners">
         <option>Number of Diners</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -25,12 +25,13 @@ function BookingForm(props) {
         <option value="9">9</option>
         <option value="10">10</option>
       </select>
-      <select value={props.resoccasion} onChange={props.updateOccasion} className='d-block rounded border-0 p-2 my-4 w-100' name="Occasion">
+      <select value={props.resoccasion} onChange={props.updateOccasion} className='d-block rounded border-0 p-2 my-4 w-100' name="Occasion" aria-label="Choose the Occasion">
         <option>Occasion</option>
         <option value="Birthday">Birthday</option>
+        <option value="Engagement">Engagement</option>
         <option value="Anniversary">Anniversary</option>
       </select>
-      <fieldset  value={props.resseat} onChange={props.updateSeat} id="Seating" className='clr-white d-md-flex justify-content-between seating-option'>
+      <fieldset value={props.resseat} onChange={props.updateSeat} id="Seating" className='clr-white d-md-flex justify-content-between seating-option'>
         <div className='fw-bold fs-5 gap-5 mb-2'>Seating Options</div>
         <div className='d-flex justify-content-between align-items-center'>
           <label className='order-md-2 ms-md-2' htmlFor='seating-standard'>Standard</label>
