@@ -10,9 +10,8 @@ function Bookings(props) {
         </form>
       </div>
       <div className='reservation-form pb-4'>
-        <BookingForm updateDate={props.updateDate} updateDiners={props.updateDiners} updateOccasion={props.updateOccasion}
-        updateSeat={props.updateSeat} updateTime={props.updateTime} resdate={props.resdate} availableTimes={props.availableTimes}
-        resdiners={props.resdiners} resoccasion={props.resoccasion} resseat={props.resseat} submitForm={props.submitForm} formData={props.formData}/>
+        <BookingForm availableTimes={props.availableTimes}
+        submitForm={props.submitForm} formData={props.formData}/>
       </div>
     </>
   );

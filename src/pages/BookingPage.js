@@ -13,9 +13,8 @@ function BookingPage(props) {
           <img className='restaurant-img w-50 pe-3' src={require('../assets/icons_assets/restaurant.jpg')} alt='Restaurant image'/>
           <img className='restaurant-img w-50 ps-3' src={require('../assets/icons_assets/restaurant chef B.jpg')} alt='Restaurant image'/>
         </div>
-        <Bookings updateDate={props.updateDate} updateDiners={props.updateDiners} updateOccasion={props.updateOccasion}
-        updateSeat={props.updateSeat} updateTime={props.updateTime} resdate={props.resdate} availableTimes={props.availableTimes}
-        resdiners={props.resdiners} resoccasion={props.resoccasion} resseat={props.resseat} submitForm={props.submitForm} formData={props.formData} onSubmit={props.onSubmit} reservePressed={props.reservePressed}/>
+        <Bookings availableTimes={props.availableTimes}
+        submitForm={props.submitForm} formData={props.formData} onSubmit={props.onSubmit} reservePressed={props.reservePressed}/>
       </div>
     </div>
   );

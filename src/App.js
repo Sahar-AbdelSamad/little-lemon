@@ -12,55 +12,11 @@ import Footer from './components/Footer.js';
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-  const [resdate, setResdate] = useState(Date());
-  const updateDate = (e) => {
-    setResdate(e.target.value);
-    updateTime(e.target.value);
-  }
-
-  const initialAvailableTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  const availableTimeReducer = (availableTimes=initialAvailableTimes, action) => {
-    if(action.type==='update time') {
-      return availableTimes;
-    }
-    if(action.type==='initialize time') {
-      return availableTimes;
-    }
-  }
-  const updateTime = (resdate) => {
-    dispatch (
-    {
-      type: 'update time',
-      date: resdate,
-    });
-  }
-
-  const initializeTimes = () => {
-    dispatch (
-      {
-        type: 'initialize time',
-      });
-  }
-  const [availableTimes, dispatch] = useReducer (availableTimeReducer, initialAvailableTimes);
-
-  useEffect(()=>{
-    initializeTimes();
-  },[])
-
-  const [resoccasion, setOccasion] = useState();
-  const updateOccasion = (e) => {
-    setOccasion(e.target.value);
-  }
-
-  const [resdiners, setDiners] = useState();
-  const updateDiners = (e) => {
-    setDiners(e.target.value);
-  }
-
-  const [resseat, setSeat] = useState();
-  const updateSeat = (e) => {
-    setSeat(e.target.value);
-  }
+  // const [resdate, setResdate] = useState(Date());
+  // const updateDate = (e) => {
+  //   setResdate(e.target.value);
+  //   updateTime(e.target.value);
+  // }
 
   const [formData, setFormData] = useState ();
   const fillCustomerDetails = () => {
@@ -91,14 +47,10 @@ function App() {
     <BrowserRouter>
       <Header/>
       <Routes> 
-        <Route path="/" element={<HomePage updateDate={updateDate} updateDiners={updateDiners} updateOccasion={updateOccasion}
-        updateSeat={updateSeat} updateTime={updateTime} resdate={resdate} availableTimes={availableTimes}
-        resdiners={resdiners} resoccasion={resoccasion} resseat={resseat} submitForm={submitForm} formData={formData} onSubmit={consoleFormData} reservePressed={reservePressed} showBookings={showBookings} />}></Route>
+        <Route path="/" element={<HomePage submitForm={submitForm} formData={formData} onSubmit={consoleFormData} reservePressed={reservePressed} showBookings={showBookings} />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/menu" element={<MenuPage />}></Route>
-        <Route path="/reservation" element={<BookingPage updateDate={updateDate} updateDiners={updateDiners} updateOccasion={updateOccasion}
-        updateSeat={updateSeat} updateTime={updateTime} resdate={resdate} availableTimes={availableTimes}
-        resdiners={resdiners} resoccasion={resoccasion} resseat={resseat} submitForm={submitForm} formData={formData} onSubmit={consoleFormData} reservePressed={reservePressed} showBookings={showBookings} />}></Route>
+        <Route path="/reservation" element={<BookingPage submitForm={submitForm} formData={formData} onSubmit={consoleFormData} reservePressed={reservePressed} showBookings={showBookings} />}></Route>
         <Route path="/orderonline" element={<OnlineOrderPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
       </Routes>

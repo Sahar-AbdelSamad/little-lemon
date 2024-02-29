@@ -5,9 +5,8 @@ import Bookings from './Bookings';
 function Hero(props) {
   return (
     <section className='hero'>
-        {props.reservePressed ? <Bookings updateDate={props.updateDate} updateDiners={props.updateDiners} updateOccasion={props.updateOccasion}
-        updateSeat={props.updateSeat} updateTime={props.updateTime} resdate={props.resdate} availableTimes={props.availableTimes}
-        resdiners={props.resdiners} resoccasion={props.resoccasion} resseat={props.resseat} submitForm={props.submitForm} formData={props.formData} onSubmit={props.onSubmit} reservePressed={props.reservePressed}/> : <>
+        {props.reservePressed ? <Bookings availableTimes={props.availableTimes}
+        submitForm={props.submitForm} formData={props.formData} onSubmit={props.onSubmit} reservePressed={props.reservePressed}/> : <>
           <div className='hero-section'>
             <h1 className='hero-title'>Little Lemon</h1>
             <h3 className='location'>Chicago</h3>
