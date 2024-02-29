@@ -10,6 +10,7 @@
   display: none;
 }
 
+.booking-page .hero-section,
 .details-form,
 .reservation-form {
   max-width: 450px;
