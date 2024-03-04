@@ -5,9 +5,8 @@ import Bookings from './Bookings';
 function Hero(props) {
   return (
     <section className='hero'>
-        {props.reservePressed ? <Bookings availableTimes={props.availableTimes}
-        submitForm={props.submitForm} formData={props.formData} onSubmit={props.onSubmit} reservePressed={props.reservePressed}/> : <>
-          <div className='hero-section'>
+      <div className='hero-section'>
+        {props.reservePressed ? <Bookings availableTimes={props.availableTimes} formData={props.formData} submitForm={props.submitForm}/> : <>
             <h1 className='hero-title'>Little Lemon</h1>
             <h3 className='location'>Chicago</h3>
             <div className='hero-description d-flex'>
@@ -15,8 +14,8 @@ function Hero(props) {
               <img className='img-hero img' src={hero} alt='Food image'/>
             </div>
             <button className='bton' onClick={props.showBookings}>Reserve a table</button>
-          </div>
         </>}
+        </div>
     </section>
   );
 }
