@@ -16,12 +16,10 @@
 
 .hero-title {
   color: var(--primary-color-yellow);
-  font-size: 40px;
 }
 
 .location {
   color: var(--secondary-color-white);
-  font-size: 25px;
   font-weight: 600;
 }
 
@@ -32,7 +30,6 @@
 }
 
 .description {
-  font-size: 16px;
   margin-bottom: 30px;
   width: 60%;
 }
@@ -47,12 +44,11 @@
 }
 
 .bton {
-  font-size: 12px;
   padding: 5px 8px;
   background-color: var(--primary-color-yellow);
   color: var(--secondary-color-black);
   font-family: 'Karla';
-  font-weight: 800;
+  font-weight: 700;
   border: none;
   border-radius: 16px;
 }
@@ -69,7 +65,6 @@
 
 .mobile-delivery h2 {
   font-family: 'Karla';
-  font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -95,13 +90,11 @@
 }
 
 .food-title {
-  font-size: 18;
   font-weight: 700;
 }
 
 .specials-description {
   font-weight: 400;
-  font-size: 16px;
   max-width: 65ch;
   overflow-y: hidden;
   -webkit-box-orient: vertical;
@@ -127,16 +120,7 @@
     margin: 0 auto;
   }
 
-  .hero-title {
-    font-size: 64px;
-  }
-  
-  .location {
-    font-size: 40px;
-  }
-  
   .description {
-    font-size: 18px;
     width: 30%;
   }
 
@@ -148,15 +132,14 @@
   }
 
   .img-hero {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 350px;
     position: absolute;
-    top: -60%;
-    right: -1%;
+    top: -27%;
+    right: 1%;
   }
 
   .bton {
-    font-size: 18px;
     padding: 14px 40px;
   }
 

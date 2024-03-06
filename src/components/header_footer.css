@@ -77,7 +77,6 @@
 .footer ul {
   list-style-type: none;
   font-family: 'Karla';
-  font-size: 18px;
   font-weight: 700;
   padding: 0;
   color: var(--secondary-color-black);
@@ -96,12 +95,7 @@ a {
   height: 100px;
 }
 
-.footer a {
-  font-size: 12px;
-}
-
 .footer-links {
-  font-size: 12px;
   display: inline;
   margin-left: 0;
 }
@@ -153,11 +147,6 @@ a {
     gap: 20px;
     flex: 1;
     margin-left: 20px;
-    font-size: 16px;
-  }
-
-  .footer a {
-    font-size: 16px;
   }
 
   .footer-links>div {
