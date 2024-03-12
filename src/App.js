@@ -15,10 +15,16 @@ function App() {
   const [formData, setFormData] = useState ();
   const submitForm = (e) => {
     e.preventDefault();
-    console.log('formData');
     const formData = new FormData(e.target);
     setFormData(Object.fromEntries(formData.entries()));
-    console.log(formData);
+    const x = Object.fromEntries(formData.entries());
+    console.log(x);
+    if(x["Seating Options"] === undefined) {
+      alert('Please select a Seating options');
+    } else {
+      console.log('Success');
+      document.getElementById("clk").disabled = true;
+    }
   }
   const [reservePressed, setReservePressed] = useState(false);
   const showBookings = () => {
