@@ -1,4 +1,5 @@
-export default function availableTimeReducer (state, action) {
+export const initialAvailableTimes = [{ date: '2024-03-16', time: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'] }];
+export default function availableTimeReducer (state=initialAvailableTimes, action) {
   switch (action.type) {
     case "update time":
       if(state.filter((availableTime) => (availableTime.date === action.date))[0]===undefined){

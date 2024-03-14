@@ -1,6 +1,6 @@
 import React, {useEffect, useReducer,useState} from 'react';
 import {useFormValue} from '../custom-hooks/useFormValue.js';
-import availableTimeReducer from '../reducers/availableTimesReducer.js';
+import availableTimeReducer, {initialAvailableTimes} from '../reducers/availableTimesReducer.js';
 
 function BookingForm(props) {
   //const reservationDate = useFormValue(Date.now());
@@ -8,7 +8,7 @@ function BookingForm(props) {
   const reservationDiners = useFormValue('');
   const reservationOccasion = useFormValue('');
   const reservationSeating = useFormValue('');
-  const [availableTimes, dispatch] = useReducer (availableTimeReducer, [{ date: '2024-03-16', time: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'] }]);
+  const [availableTimes, dispatch] = useReducer (availableTimeReducer, initialAvailableTimes);
   const [showTime, setShowTime] = useState('');
   const [resdate, setResdate] = useState('2024-03-16');
 
@@ -17,8 +17,12 @@ function BookingForm(props) {
     dispatch({type:'update time', date: e.target.value});
   }
 
-  useEffect(()=>{
+  const initializeTimes = () => {
     dispatch({type:'initialize time'});
+  }
+
+  useEffect(()=>{
+    initializeTimes();
   },[])
 
   useEffect(()=>{
