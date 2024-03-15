@@ -42,4 +42,12 @@ describe('<BookingForm/>', () => {
         expect(screen.getByLabelText('Outside')).toBeInTheDocument();
         expect(screen.getByLabelText('Standard')).toBeInTheDocument();
     })
+
+    test("Form submitted successfully", () => {
+        submitForm.mockClear();
+        const { getByTestId} = render(<BookingForm submitForm={submitForm}/> );
+        const form = getByTestId('form');
+        fireEvent.submit(form);
+        expect(submitForm).toHaveBeenCalled();
+    })
 })
