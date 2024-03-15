@@ -39,7 +39,7 @@ function BookingForm(props) {
   }
 
   return (
-    <form className='Karla' onSubmit={props.submitForm}>
+    <form className='Karla' data-testid="form" onSubmit={props.submitForm}>
       <div className='d-flex'>
         <input value={resdate} onChange={updateTimes} name='Reservation Date' className='w-50 rounded border-0 p-2 mt-5 mb-4 me-3' type='date' placeholder='Choose Date' aria-label="Choose Date" required/>
         <select {...reservationTime} name='Reservation Time' className='w-50 rounded border-0 p-2 mt-5 mb-4' aria-label="Choose Time" required>
@@ -73,7 +73,7 @@ function BookingForm(props) {
           <input className='order-md-1' id='seating-standard' type="radio" value="Standard" name="Seating Options"/>
         </div>
         <div className='d-flex justify-content-between align-items-center'>
-          <label className='order-md-2 ms-md-2' htmlFor=' Options-outside'>Outside</label>
+          <label className='order-md-2 ms-md-2' htmlFor='seating-outside'>Outside</label>
           <input className='order-md-1' id='seating-outside' type="radio" value="Outside" name="Seating Options"/>
         </div>
       </fieldset>
