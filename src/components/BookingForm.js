@@ -1,50 +1,29 @@
-import React, {useEffect, useReducer,useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useFormValue} from '../custom-hooks/useFormValue.js';
-import availableTimeReducer, {initialAvailableTimes} from '../reducers/availableTimesReducer.js';
+import {fetchAPI} from '../api/api.js'
 
 function BookingForm(props) {
-  //const reservationDate = useFormValue(Date.now());
+  const reservationDate = useFormValue(Date.now());
   const reservationTime = useFormValue('');
   const reservationDiners = useFormValue('');
   const reservationOccasion = useFormValue('');
   const reservationSeating = useFormValue('');
-  const [availableTimes, dispatch] = useReducer (availableTimeReducer, initialAvailableTimes);
-  const [showTime, setShowTime] = useState('');
-  const [resdate, setResdate] = useState('2024-03-16');
-
-  const updateTimes = (e) => {
-    setResdate(e.target.value);
-    dispatch({type:'update time', date: e.target.value});
-  }
-
-  const initializeTimes = () => {
-    dispatch({type:'initialize time'});
-  }
+  const [availableTimes, setAvailableTime] = useState([]);
 
   useEffect(()=>{
-    initializeTimes();
-  },[])
-
-  useEffect(()=>{
-    upTime(resdate);
-  },[resdate])
-
-  const upTime = (date) => {
-    const presentTime = availableTimes.filter((availableTime) => (availableTime.date === date));
-    setShowTime(presentTime.map(availableTime => (
-      (availableTime.time).map(avTime => (
-        <option key={avTime} value={avTime}>{avTime}</option>
-      ))
-    )));
-  }
+    setAvailableTime(fetchAPI(reservationDate.value));
+    console.log(reservationDate.value)
+  },[reservationDate.value])
 
   return (
     <form className='Karla' data-testid="form" onSubmit={props.submitForm}>
       <div className='d-flex'>
-        <input value={resdate} onChange={updateTimes} name='Reservation Date' className='w-50 rounded border-0 p-2 mt-5 mb-4 me-3' type='date' placeholder='Choose Date' aria-label="Choose Date" required/>
+        <input {...reservationDate} name='Reservation Date' className='w-50 rounded border-0 p-2 mt-5 mb-4 me-3' type='date' placeholder='Choose Date' aria-label="Choose Date" required/>
         <select {...reservationTime} name='Reservation Time' className='w-50 rounded border-0 p-2 mt-5 mb-4' aria-label="Choose Time" required>
           <option value="">Choose Time</option>
-          {showTime}
+          {(availableTimes).map(avTime => (
+              <option key={avTime} value={avTime}>{avTime}</option>
+            ))}
         </select>
       </div>
       <select {...reservationDiners} className='d-block rounded border-0 p-2 w-100' name="Number Of Diners" aria-label="Choose number of diners" required>
