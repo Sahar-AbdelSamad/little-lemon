@@ -5,7 +5,7 @@ function Bookings(props) {
   return (
     <>
       <div className='reservation-form pb-4'>
-        <BookingForm submitForm={props.submitForm} formData={props.formData}/>
+        <BookingForm bookingConfirmed={props.bookingConfirmed} submitForm={props.submitForm} formData={props.formData}/>
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useFormValue} from '../custom-hooks/useFormValue.js';
 import {fetchAPI} from '../api/api.js';
+import ConfirmedBookingPage from '../pages/ConfirmedBookingPage.js';
 function BookingForm(props) {
   const reservationDate = useFormValue(Date.now());
   const reservationTime = useFormValue('');
@@ -14,6 +15,9 @@ function BookingForm(props) {
     console.log(reservationDate.value)
   },[reservationDate.value])
 
+  if(props.bookingConfirmed) {
+    return ( <ConfirmedBookingPage/>)
+  } else {
   return (
     <form className='Karla' data-testid="form" onSubmit={props.submitForm}>
       <div className='d-flex'>
@@ -59,6 +63,7 @@ function BookingForm(props) {
       <input id='clk' className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>
     </form>
   );
+  }
 }
 
 export default BookingForm;
