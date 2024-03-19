@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useFormValue} from '../custom-hooks/useFormValue.js';
-import {fetchAPI} from '../api/api.js'
-
+import {fetchAPI} from '../api/api.js';
 function BookingForm(props) {
   const reservationDate = useFormValue(Date.now());
   const reservationTime = useFormValue('');
