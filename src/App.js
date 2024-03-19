@@ -40,6 +40,7 @@ function App() {
         <Route path="/reservation" element={<BookingPage formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
         <Route path="/orderonline" element={<OnlineOrderPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/confirmation" element={<ConfirmedBookingPage />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
