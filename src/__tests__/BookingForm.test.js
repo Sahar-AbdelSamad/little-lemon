@@ -43,6 +43,24 @@ describe('<BookingForm/>', () => {
         expect(screen.getByLabelText('Standard')).toBeInTheDocument();
     })
 
+    test("Form fields should have the correct attributes", () => {
+        render(<BookingForm/>);
+        expect(screen.getByLabelText('Choose Date')).toHaveAttribute('type','date');
+        expect(screen.getByLabelText('Choose Time')).toHaveAttribute('name','Reservation Time');
+        expect(screen.getByLabelText('Choose Time')).toHaveAttribute('required');
+        expect(screen.getByLabelText('Choose number of diners')).toHaveAttribute('name','Number Of Diners');
+        expect(screen.getByLabelText('Choose the Occasion')).toHaveAttribute('name','Occasion');
+        expect(screen.getByLabelText('Outside')).toHaveAttribute('type','radio');
+        expect(screen.getByLabelText('Standard')).toHaveAttribute('type','radio');
+    })
+
+    test("Booking form is validating user data", () => {
+        render(<BookingForm/>);
+        expect(screen.getByLabelText('Choose Date')).toHaveAttribute('required');
+        expect(screen.getByLabelText('Choose Time')).toHaveAttribute('required');
+        expect(screen.getByLabelText('Choose number of diners')).toHaveAttribute('required');
+    })
+
     test("Form submitted successfully", () => {
         submitForm.mockClear();
         const { getByTestId} = render(<BookingForm submitForm={submitForm}/> );
