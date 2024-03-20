@@ -25,12 +25,6 @@ function App() {
     if(submitAPI(data)===true) {
       setBookingConfirmed(true);
     }
-    // if(x["Seating Options"] === undefined) {
-    //   alert('Please select a Seating options');
-    // } else {
-    //   console.log('Success');
-    //   document.getElementById("clk").disabled = true;
-    // }
   }
   const [reservePressed, setReservePressed] = useState(false);
   const showBookings = () => {

@@ -8,8 +8,8 @@ describe('<BookingForm/>', () => {
     const submitForm = jest.fn((e) => e.preventDefault());
     test('Renders the BookingForm heading', () => {
         render(<BookingForm />);
-        const submitButton = screen.getByText(/Make Your reservation/i);
-        expect(submitButton).toBeInTheDocument();
+        const reservationButton = screen.getByText(/Make Your reservation/i);
+        expect(reservationButton).toBeInTheDocument();
     })
 
     test('initializeTimes reducer function returns the correct expected value', () => {
@@ -67,5 +67,24 @@ describe('<BookingForm/>', () => {
         const form = getByTestId('form');
         fireEvent.submit(form);
         expect(submitForm).toHaveBeenCalled();
+    })
+
+    test("Submit Button disabled whith invalid input", () => {
+        render(<BookingForm/>);
+        const submitButton = screen.getByTestId('submitButton');
+        expect(submitButton).toBeInTheDocument();
+        expect(submitButton).toBeDisabled();
+    })
+
+    test("Submit Button enabled whith valid input", () => {
+        render(<BookingForm/>);
+        const reservationDate = screen.getByLabelText('Choose Date');
+        fireEvent.change(reservationDate, { target: { value: '2024-02-02' } });
+        const reservationTime = screen.getByLabelText('Choose Time');
+        fireEvent.change(reservationTime, { target: { value: '17:00' } });
+        const reservationDiners = screen.getByLabelText('Choose number of diners');
+        fireEvent.change(reservationDiners, { target: { value: '1' } });
+        const submitButton = screen.getByTestId('submitButton');
+        expect(submitButton).not.toBeDisabled();
     })
 })

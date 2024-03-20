@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useFormValue} from '../custom-hooks/useFormValue.js';
 import {fetchAPI} from '../api/api.js';
 import ConfirmedBookingPage from '../pages/ConfirmedBookingPage.js';
+
 function BookingForm(props) {
   const reservationDate = useFormValue(Date.now());
   const reservationTime = useFormValue('');
@@ -9,11 +10,17 @@ function BookingForm(props) {
   const reservationOccasion = useFormValue('');
   const reservationSeating = useFormValue('');
   const [availableTimes, setAvailableTime] = useState([]);
+  const [disableSubmit, setDisableSubmit] = useState(true);
 
   useEffect(()=>{
     setAvailableTime(fetchAPI(reservationDate.value));
-    console.log(reservationDate.value)
   },[reservationDate.value])
+
+  useEffect(()=>{
+    if(reservationDate.value && reservationDiners.value && reservationTime.value !== '') {
+      setDisableSubmit(false);
+    }
+  },[reservationTime.value,reservationDate.value,reservationDiners.value])
 
   if(props.bookingConfirmed) {
     return ( <ConfirmedBookingPage/>)
@@ -60,7 +67,7 @@ function BookingForm(props) {
         </div>
       </fieldset>
       <div>{true}</div>
-      <input id='clk' className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>
+      <input data-testid="submitButton" disabled={disableSubmit} className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>
     </form>
   );
   }
