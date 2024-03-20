@@ -67,7 +67,7 @@ function BookingForm(props) {
         </div>
       </fieldset>
       <div>{true}</div>
-      <input data-testid="submitButton" disabled={disableSubmit} className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>
+      <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>
     </form>
   );
   }

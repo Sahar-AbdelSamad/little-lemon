@@ -13,7 +13,7 @@ function Hero(props) {
               <p className='description Karla f-medium clr-white'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a moder twist.</p>
               <img className='img-hero img' src={hero} alt='Food'/>
             </div>
-            <button className='bton' onClick={props.showBookings}>Reserve a table</button>
+            <button aria-label="On Click" className='bton' onClick={props.showBookings}>Reserve a table</button>
         </>}
         </div>
     </section>

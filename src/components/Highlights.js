@@ -6,7 +6,7 @@ function Highlights() {
     <section className='highlights screen-width'>
         <div className='hide-mobile foods-specials'>
           <h2>This Week's Specials!</h2>
-          <button className='bton order-btn'>
+          <button aria-label="On Click" className='bton order-btn'>
           <NavLink to='/orderonline'>Order Online</NavLink></button>
         </div>
         <div className='hide-desktop mobile-delivery'>
