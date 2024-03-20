@@ -34,10 +34,10 @@ function App() {
     <BrowserRouter>
       <Header/>
       <Routes> 
-        <Route path="/" element={<HomePage bookingConfirmed={bookingConfirmed} formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
+        <Route path="/" element={<HomePage setBookingConfirmed={setBookingConfirmed} bookingConfirmed={bookingConfirmed} formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/menu" element={<MenuPage />}></Route>
-        <Route path="/reservation" element={<BookingPage bookingConfirmed={bookingConfirmed} formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
+        <Route path="/reservation" element={<BookingPage setBookingConfirmed={setBookingConfirmed} bookingConfirmed={bookingConfirmed} formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
         <Route path="/orderonline" element={<OnlineOrderPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/confirmation" element={<ConfirmedBookingPage />}></Route>

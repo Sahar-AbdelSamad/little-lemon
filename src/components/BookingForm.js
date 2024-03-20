@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useFormValue} from '../custom-hooks/useFormValue.js';
 import {fetchAPI} from '../api/api.js';
-import ConfirmedBookingPage from '../pages/ConfirmedBookingPage.js';
 
 function BookingForm(props) {
   const reservationDate = useFormValue(Date.now());
@@ -22,22 +21,19 @@ function BookingForm(props) {
     }
   },[reservationTime.value,reservationDate.value,reservationDiners.value])
 
-  if(props.bookingConfirmed) {
-    return ( <ConfirmedBookingPage/>)
-  } else {
   return (
     <form className='Karla' data-testid="form" onSubmit={props.submitForm}>
       <div className='d-flex'>
         <input {...reservationDate} name='Reservation Date' className='w-50 rounded border-0 p-2 mt-5 mb-4 me-3' type='date' placeholder='Choose Date' aria-label="Choose Date" required/>
         <select {...reservationTime} name='Reservation Time' className='w-50 rounded border-0 p-2 mt-5 mb-4' aria-label="Choose Time" required>
-          <option value="">Choose Time</option>
+          <option value="">Choose Time *</option>
           {(availableTimes).map(avTime => (
               <option key={avTime} value={avTime}>{avTime}</option>
             ))}
         </select>
       </div>
       <select {...reservationDiners} className='d-block rounded border-0 p-2 w-100' name="Number Of Diners" aria-label="Choose number of diners" required>
-        <option value="">Number of Diners</option>
+        <option value="">Number of Diners *</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -66,11 +62,14 @@ function BookingForm(props) {
           <input className='order-md-1' id='seating-outside' type="radio" value="Outside" name="Seating Options"/>
         </div>
       </fieldset>
-      <div>{true}</div>
-      <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>
+      {props.reservePressed ?
+        <div className='d-flex flex-column flex-md-row justify-content-between'>
+          <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className='order-md-2 mt-4 py-2 bton font-large' type="submit" value="Make Your reservation"/>
+          <button className='bton mt-4 py-2' onClick={props.showBookings}>Cancel</button>
+        </div> :
+        <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>}
     </form>
   );
-  }
 }
 
 export default BookingForm;

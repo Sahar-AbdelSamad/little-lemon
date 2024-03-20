@@ -6,7 +6,7 @@ function Hero(props) {
   return (
     <section className='hero'>
       <div className='hero-section'>
-        {props.reservePressed ? <Bookings bookingConfirmed={props.bookingConfirmed} formData={props.formData} submitForm={props.submitForm}/> : <>
+        {props.reservePressed ? <Bookings setBookingConfirmed={props.setBookingConfirmed} reservePressed={props.reservePressed} showBookings={props.showBookings} bookingConfirmed={props.bookingConfirmed} formData={props.formData} submitForm={props.submitForm}/> : <>
             <h1 className='hero-title'>Little Lemon</h1>
             <h3 className='location'>Chicago</h3>
             <div className='hero-description d-flex'>

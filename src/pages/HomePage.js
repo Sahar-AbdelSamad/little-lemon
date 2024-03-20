@@ -8,7 +8,7 @@ import './homePage.css';
 function Main(props) {
   return (
     <main>
-      <Hero bookingConfirmed={props.bookingConfirmed} formData={props.formData} submitForm={props.submitForm} reservePressed={props.reservePressed} showBookings={props.showBookings}/>
+      <Hero setBookingConfirmed={props.setBookingConfirmed} bookingConfirmed={props.bookingConfirmed} formData={props.formData} submitForm={props.submitForm} reservePressed={props.reservePressed} showBookings={props.showBookings}/>
       <Highlights/>
       <CustomersSay/>
       <Chicago/>
