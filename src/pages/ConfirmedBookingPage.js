@@ -2,7 +2,7 @@ import React from 'react';
 
 function ConfirmedBookingPage() {
   return (
-    <>Booking confirmed successfully</>
+    <div className='text-center pt-4 clr-yellow h2'>Booking confirmed successfully</div>
   );
 }
 
