@@ -2,6 +2,15 @@
   margin: 0px 10px;
 }
 
+.active {
+  color: var(--primary-color-yellow);
+}
+
+.navigation a:focus,
+.navigation a:hover {
+  border-bottom: 1px solid var(--secondary-color-black);
+}
+
 .hamburgerbtn {
   background-image: url(../assets/icons_assets/🦆\ icon\ _hamburger\ menu.svg);
   background-size: 100% 100%;
