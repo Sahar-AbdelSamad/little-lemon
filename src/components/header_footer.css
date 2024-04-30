@@ -11,23 +11,21 @@
   border-bottom: 1px solid var(--primary-color-yellow);
 }
 
-.hamburgerbtn {
-  background-image: url(../assets/icons_assets/🦆\ icon\ _hamburger\ menu.svg);
-  background-size: 100% 100%;
-  width: 20px;
-  height: 20px;
+.header .hamburgerbtn {
+  width: 30px;
+  height: 30px;
+  font-size: xx-large;
   border: none;
-  background-color: white;
+  background: transparent;
   margin-left: 2px;
+  position: fixed;
+  z-index: 2;
+  top: -1px;
 }
 
 .closebtn {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
+  left: 140px;
+  position: relative;
 }
 
 .basket {
@@ -51,18 +49,21 @@
   display: none;
 }
 
-.mobile-nav .navigation {
-  background-color: var(--secondary-color-white);
-  position: fixed;
-  inset: 0;
+.menu-nav {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.mobile-nav .navigation ul {
+.show-menu {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin: 20px auto 0;
+  background-color: var(--secondary-color-white);
+  position: fixed;
+  margin: 0;
+  padding-top: 50px !important;
+  width: 200px;
+  inset: 0;
+  padding-left: 20px !important;
 }
 
 .footer .navigation {
@@ -115,6 +116,11 @@ a {
 }
 
 @media screen and (min-width:768px) {
+  .header {
+    height: 52px;
+    display: flex;
+  }
+
   .screen-width {
     width: 90%;
     margin: 0 auto;
@@ -128,7 +134,7 @@ a {
   .logo {
     margin-right: 40px;
     width: 200px;
-    height: 70px;
+    height: 45px;
   }
 
   .navbar {
@@ -147,6 +153,7 @@ a {
 
   nav {
     width: 100%;
+    order: 1;
   }
 
   .footer-links {
