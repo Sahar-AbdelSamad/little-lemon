@@ -16,6 +16,25 @@
   margin: auto;
 }
 
+.btn-disabled {
+  background-color: #F4CE14A6!important;
+  color: #353535!important;
+}
+
+.label-reservation {
+  font-size: 12px;
+  color: #e9e9ed;
+}
+
+.date-selection {
+  height: 35px;
+  background-color: #e9e9ed;
+}
+
+.date-selection:focus-visible {
+  outline: none;
+}
+
 @media screen and (min-width:768px) {
   .seating-option {
     max-width: 100%;
