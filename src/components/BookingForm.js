@@ -1,31 +1,48 @@
 import React, {useEffect, useState} from 'react';
 import {useFormValue} from '../custom-hooks/useFormValue.js';
 import {fetchAPI} from '../api/api.js';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function BookingForm(props) {
-  const reservationDate = useFormValue(Date.now());
   const reservationTime = useFormValue('');
   const reservationDiners = useFormValue('');
   const reservationOccasion = useFormValue('');
   const reservationSeating = useFormValue('');
   const [availableTimes, setAvailableTime] = useState([]);
   const [disableSubmit, setDisableSubmit] = useState(true);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(()=>{
-    setAvailableTime(fetchAPI(reservationDate.value));
-  },[reservationDate.value])
+    setAvailableTime(fetchAPI(selectedDate));
+  },[selectedDate])
 
   useEffect(()=>{
-    if(reservationDate.value && reservationDiners.value && reservationTime.value !== '') {
+    if(selectedDate && reservationDiners.value && reservationTime.value !== '') {
       setDisableSubmit(false);
     }
-  },[reservationTime.value,reservationDate.value,reservationDiners.value])
+  },[reservationTime.value,selectedDate,reservationDiners.value])
+  const minDate = new Date(); // Today's date
+  const maxDate = new Date();
+  maxDate.setMonth(maxDate.getMonth() + 2); // Two months in advance
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
   return (
     <form className='Karla' data-testid="form" onSubmit={props.submitForm}>
       <div className='d-flex'>
         <label className='mt-5 d-flex flex-column w-50'><span className='ps-1 label-reservation'>Date - <i>Required</i></span>
-          <input {...reservationDate} name='Reservation Date' className='rounded border-0 p-2 mb-4 me-3 date-selection' type='date' placeholder='Choose Date' aria-label="Choose Date" required/>
+          <DatePicker className='rounded border-0 p-1 mb-4'
+      selected={selectedDate}
+      onChange={handleDateChange}
+      minDate={minDate}
+      maxDate={maxDate}
+      dateFormat="MMMM d, yyyy"
+      placeholderText="Select a date"
+      disabledKeyboardNavigation
+      todayButton="Today"
+    />
         </label>
         <label className='mt-5 d-flex flex-column w-50'><span className='ps-1 label-reservation'>Time - <i>Required</i></span>
           <select {...reservationTime} name='Reservation Time' className='rounded border-0 p-2 mb-4' aria-label="Choose Time" required>

@@ -26,6 +26,10 @@
   color: #e9e9ed;
 }
 
+.react-datepicker-wrapper input {
+  height: 35px;
+}
+
 .date-selection {
   height: 35px;
   background-color: #e9e9ed;
