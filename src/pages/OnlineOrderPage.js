@@ -2,7 +2,7 @@ import React from 'react';
 
 function OnlineOrderPage() {
   return (
-    <>Online Order Page</>
+    <section className='screen-width m-5 text-center'>Online Order Page,<br/>Under Construction...</section>
   );
 }
 

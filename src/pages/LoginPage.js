@@ -2,7 +2,7 @@ import React from 'react';
 
 function LoginPage() {
   return (
-    <>Login Page</>
+    <section className='screen-width m-5 text-center'>Login Page,<br/>Under Construction...</section>
   );
 }
 
