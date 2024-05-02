@@ -70,7 +70,7 @@ function BookingForm(props) {
       </fieldset>
       {props.reservePressed ?
         <div className='d-flex flex-column flex-md-row justify-content-between'>
-          <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className='order-md-2 mt-4 py-2 bton font-large' type="submit" value="Make Your reservation"/>
+          <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className={`order-md-2 mt-4 py-2 bton font-large ${disableSubmit ? 'btn-disabled' : ''}`} type="submit" value="Make Your reservation"/>
           <button className='bton mt-4 py-2' onClick={props.showBookings}>Cancel</button>
         </div> :
         <input data-testid="submitButton" aria-label="On Click" className='d-block mt-4 fs-6 py-2 bton w-100 font-large' type="submit" value="Make Your reservation"/>}

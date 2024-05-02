@@ -80,6 +80,11 @@
   padding-left: 20px !important;
 }
 
+.btn-disabled {
+  background-color: #F4CE14A6!important;
+  color: #353535!important;
+}
+
 .footer .menu-nav {
   display: flex;
   gap: 0;
