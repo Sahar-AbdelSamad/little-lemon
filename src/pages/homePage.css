@@ -170,6 +170,7 @@
     display: flex;
     gap: 45px;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .specials-cards>div {
