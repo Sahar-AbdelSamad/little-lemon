@@ -12,6 +12,7 @@ function BookingForm(props) {
   const [availableTimes, setAvailableTime] = useState([]);
   const [disableSubmit, setDisableSubmit] = useState(true);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(()=>{
     setAvailableTime(fetchAPI(selectedDate));
@@ -28,25 +29,29 @@ function BookingForm(props) {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    console.log(date)
+    setIsOpen(false);
   };
   return (
     <form className='Karla' data-testid="form" onSubmit={props.submitForm}>
       <div className='d-flex'>
         <label className='mt-5 d-flex flex-column w-50'><span className='ps-1 label-reservation'>Date - <i>Required</i></span>
-          <DatePicker className='rounded border-0 p-1 mb-4'
-      selected={selectedDate}
-      onChange={handleDateChange}
-      minDate={minDate}
-      maxDate={maxDate}
-      dateFormat="MMMM d, yyyy"
-      placeholderText="Select a date"
-      disabledKeyboardNavigation
-      todayButton="Today"
-    />
+          <DatePicker className='rounded border-0 p-1 mb-4' aria-label="Select a date" name='Reservation Date'
+              selected={selectedDate}
+              onChange={handleDateChange}
+              minDate={minDate}
+              maxDate={maxDate}
+              dateFormat="MMMM d, yyyy"
+              placeholderText="Select a date"
+              todayButton="Today"
+              open={isOpen}
+              onClickOutside={() => setIsOpen(false)}
+              onFocus={() => setIsOpen(true)}
+            />
         </label>
         <label className='mt-5 d-flex flex-column w-50'><span className='ps-1 label-reservation'>Time - <i>Required</i></span>
-          <select {...reservationTime} name='Reservation Time' className='rounded border-0 p-2 mb-4' aria-label="Choose Time" required>
-            <option value="" disabled>Choose Time</option>
+          <select {...reservationTime} name='Reservation Time' className='rounded border-0 p-2 mb-4' aria-label="Select a time" required>
+            <option value="" disabled>Select a time</option>
             {(availableTimes).map(avTime => (
                 <option key={avTime} value={avTime}>{avTime}</option>
               ))}

@@ -5,7 +5,7 @@ import ConfirmedBookingPage from '../pages/ConfirmedBookingPage.js';
 function Bookings(props) {
 
   if(props.bookingConfirmed) {
-    return ( <ConfirmedBookingPage setBookingConfirmed={props.setBookingConfirmed} bookingConfirmed={props.bookingConfirmed}/>)
+    return ( <ConfirmedBookingPage formData={props.formData} setBookingConfirmed={props.setBookingConfirmed} bookingConfirmed={props.bookingConfirmed}/>)
   } else {
   return (
     <>
