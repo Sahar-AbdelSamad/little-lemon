@@ -122,6 +122,8 @@
 
   .description {
     width: 30%;
+    font-size: large;
+    padding-top: 5px;
   }
 
   .hero-description {
