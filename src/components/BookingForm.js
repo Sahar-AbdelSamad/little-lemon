@@ -5,15 +5,14 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function BookingForm(props) {
-  const reservationTime = useFormValue('');
-  const reservationDiners = useFormValue('');
-  const reservationOccasion = useFormValue('');
-  const reservationSeating = useFormValue('');
+  const reservationTime = useFormValue(props.formData["Reservation Time"] || '');
+  const reservationDiners = useFormValue(props.formData["Number Of Diners"] || '');
+  const reservationOccasion = useFormValue(props.formData["Occasion"] || '');
+  const reservationSeating = useFormValue(props.formData["Seating Options"] || '');
   const [availableTimes, setAvailableTime] = useState([]);
   const [disableSubmit, setDisableSubmit] = useState(true);
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(props.formData["Reservation Date"]);
   const [isOpen, setIsOpen] = useState(false);
-
   useEffect(()=>{
     setAvailableTime(fetchAPI(selectedDate));
   },[selectedDate])
@@ -34,7 +33,7 @@ function BookingForm(props) {
   };
   return (
     <form className='Karla' data-testid="form" onSubmit={props.submitForm}>
-      <div className='d-flex'>
+      <div className='d-flex flex-sm-row flex-column'>
         <label className='mt-5 d-flex flex-column w-50'><span className='ps-1 label-reservation'>Date - <i>Required</i></span>
           <DatePicker className='rounded border-0 p-1 mb-4' aria-label="Select a date" name='Reservation Date'
               selected={selectedDate}
@@ -49,7 +48,7 @@ function BookingForm(props) {
               onFocus={() => setIsOpen(true)}
             />
         </label>
-        <label className='mt-5 d-flex flex-column w-50'><span className='ps-1 label-reservation'>Time - <i>Required</i></span>
+        <label className='mt-sm-5 flex-grow-1 d-flex flex-column'><span className='ps-1 label-reservation'>Time - <i>Required</i></span>
           <select {...reservationTime} name='Reservation Time' className='rounded border-0 p-2 mb-4' aria-label="Select a time" required>
             <option value="" disabled>Select a time</option>
             {(availableTimes).map(avTime => (
@@ -95,7 +94,7 @@ function BookingForm(props) {
           <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className={`order-md-2 mt-4 py-2 bton font-large ${disableSubmit ? 'btn-disabled' : ''}`} type="submit" value="Make Your reservation"/>
           <button className='bton mt-4 py-2' onClick={props.showBookings}>Cancel</button>
         </div> :
-        <input data-testid="submitButton" aria-label="On Click"disabled={disableSubmit} className={`d-block mt-4 fs-6 py-2 bton w-100 font-large ${disableSubmit ? 'btn-disabled' : ''}`} type="submit" value="Make Your reservation"/>}
+        <input data-testid="submitButton" aria-label="On Click" disabled={disableSubmit} className={`d-block mt-4 fs-6 py-2 bton w-100 font-large ${disableSubmit ? 'btn-disabled' : ''}`} type="submit" value="Make Your reservation"/>}
     </form>
   );
 }

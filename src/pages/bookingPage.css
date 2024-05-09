@@ -12,7 +12,7 @@
 
 .booking-page .hero-section,
 .reservation-form {
-  max-width: 450px;
+  max-width: 500px;
   margin: auto;
 }
 
@@ -37,6 +37,20 @@
 
 .date-selection:focus-visible {
   outline: none;
+}
+
+.confirmation-image {
+  max-height: 180px;
+  max-width: auto;
+}
+
+.cancel-booking {
+  color: var(--secondary-color-white);
+  background: none;
+  font-size: medium;
+  border: 1px solid var(--secondary-color-white);
+  padding: 6px 9px;
+  margin-left: 95px;
 }
 
 @media screen and (min-width:768px) {

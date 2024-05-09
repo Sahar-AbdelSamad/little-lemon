@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Header from './components/Header.js';
@@ -26,6 +26,17 @@ function App() {
       setBookingConfirmed(true);
     }
   }
+  useEffect(() => {
+    const savedFormData = localStorage.getItem('formData');
+    if (savedFormData) {
+      setFormData(savedFormData);
+    }
+  }, []);
+
+  // Save form data to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]);
   const [reservePressed, setReservePressed] = useState(false);
   const showBookings = () => {
     setReservePressed(!reservePressed);

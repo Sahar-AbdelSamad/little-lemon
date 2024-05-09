@@ -53,6 +53,7 @@
   display: none;
   flex-direction: column;
   gap: 20px;
+  z-index: 1;
 }
 
 .show-menu {
