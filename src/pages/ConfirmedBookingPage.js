@@ -12,7 +12,7 @@ function ConfirmedBookingPage() {
   const formData = useSelector(state => state.booking.formData);
   return (
     <div>
-      <h2 className='text-center pt-4 pb-2 clr-yellow'>Booking confirmed successfully</h2>
+      <h2 className='text-center pt-4 pb-2 clr-yellow'>Hi {formData['Full Name']}, your booking is confirmed</h2>
       <div className='clr-white d-flex justify-content-around'>
         <ul className='list-unstyled'>
           <li className='h3'>Little Lemon <button className='cancel-booking' onClick={(()=>dispatch(clearForm()))}>Cancel Booking</button></li>
