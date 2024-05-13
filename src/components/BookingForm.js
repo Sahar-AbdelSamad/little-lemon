@@ -131,7 +131,7 @@ function BookingForm() {
           <input className='rounded border-0 p-1' placeholder='Enter your email address' type='email' name='Email' value={formData['Email']} onChange={handleChange} required/>
         </label>
         <label className='mt-3 d-flex flex-column'><span className='ps-1 label-reservation'>Phone number - <i>Required</i></span>
-          <input className='rounded border-0 p-1' placeholder='Enter your phone number' type='tel' name='Tel' value={formData['Tel']} onChange={handleChange} required/>
+          <input className='rounded border-0 p-1' placeholder='Enter your phone number' title="Phone number must be in the format: xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" type='tel' name='Tel' value={formData['Tel']} onChange={handleChange} required/>
         </label>
       </div>
       {reservePressed ?
