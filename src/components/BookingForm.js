@@ -3,8 +3,12 @@ import {useFormValue} from '../custom-hooks/useFormValue.js';
 import {fetchAPI} from '../api/api.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { pressReservationBtnOnHomepage } from '../redux/booking/bookingSlice';
 
 function BookingForm(props) {
+  const dispatch = useDispatch();
+  const reservePressed = useSelector(state => state.booking.reserveButtonPressed);
   const reservationTime = useFormValue(props.formData["Reservation Time"] || '');
   const reservationDiners = useFormValue(props.formData["Number Of Diners"] || '');
   const reservationOccasion = useFormValue(props.formData["Occasion"] || '');
@@ -89,10 +93,10 @@ function BookingForm(props) {
           <input className='order-md-1' id='seating-outside' type="radio" value="Outside" onChange={(e) => setReservationSeating(e.target.value)} checked={reservationSeating === 'Outside'} name="Seating Options"/>
         </div>
       </fieldset>
-      {props.reservePressed ?
+      {reservePressed ?
         <div className='d-flex flex-column flex-md-row justify-content-between'>
           <input data-testid="submitButton" disabled={disableSubmit} aria-label="On Click" className={`order-md-2 mt-4 py-2 bton font-large ${disableSubmit ? 'btn-disabled' : ''}`} type="submit" value="Make Your reservation"/>
-          <button className='bton mt-4 py-2' onClick={props.showBookings}>Cancel</button>
+          <button className='bton mt-4 py-2' onClick={() => dispatch(pressReservationBtnOnHomepage())}>Cancel</button>
         </div> :
         <input data-testid="submitButton" aria-label="On Click" disabled={disableSubmit} className={`d-block mt-4 fs-6 py-2 bton w-100 font-large ${disableSubmit ? 'btn-disabled' : ''}`} type="submit" value="Make Your reservation"/>}
     </form>

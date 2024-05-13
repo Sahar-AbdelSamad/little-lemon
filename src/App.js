@@ -33,18 +33,14 @@ function App() {
   useEffect(() => {
     setFormData(localState);
   }, []);
-  const [reservePressed, setReservePressed] = useState(false);
-  const showBookings = () => {
-    setReservePressed(!reservePressed);
-  }
   return (
     <BrowserRouter>
       <Header/>
       <Routes> 
-        <Route path="/" element={<HomePage formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
+        <Route path="/" element={<HomePage formData={formData} submitForm={submitForm}/>}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/menu" element={<MenuPage />}></Route>
-        <Route path="/reservation" element={<BookingPage formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
+        <Route path="/reservation" element={<BookingPage formData={formData} submitForm={submitForm}/>}></Route>
         <Route path="/orderonline" element={<OnlineOrderPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/confirmation" element={<ConfirmedBookingPage />}></Route>

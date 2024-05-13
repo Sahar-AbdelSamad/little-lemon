@@ -12,7 +12,7 @@ function Bookings(props) {
   return (
     <>
       <div className='reservation-form pb-4'>
-        <BookingForm formData={props.formData} reservePressed={props.reservePressed} showBookings={props.showBookings} submitForm={props.submitForm}/>
+        <BookingForm formData={props.formData} submitForm={props.submitForm}/>
       </div>
     </>
   );

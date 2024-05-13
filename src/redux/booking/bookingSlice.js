@@ -7,7 +7,8 @@ const bookingSlice = createSlice({
               'Reservation Time': '',
               'Number Of Diners': '',
               },
-            bookingConfirmed: false,},
+            bookingConfirmed: false,
+            reserveButtonPressed: false,},
   reducers: {
     loadFromLocalStorage: (state) => {
       try {
@@ -30,10 +31,13 @@ const bookingSlice = createSlice({
     },
     switchBookingConfirmation: state => {
       state.bookingConfirmed = !state.bookingConfirmed;
-    }
+    },
+    pressReservationBtnOnHomepage: state => {
+      state.reserveButtonPressed = !state.reserveButtonPressed;
+    },
   },
 });
 
-export const { loadFromLocalStorage, saveToLocalStorage, switchBookingConfirmation } = bookingSlice.actions;
+export const { loadFromLocalStorage, saveToLocalStorage, switchBookingConfirmation, pressReservationBtnOnHomepage } = bookingSlice.actions;
 
 export default bookingSlice.reducer;
