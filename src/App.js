@@ -11,15 +11,14 @@ import LoginPage from './pages/LoginPage.js';
 import Footer from './components/Footer.js';
 import ConfirmedBookingPage from './pages/ConfirmedBookingPage.js';
 import { BrowserRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { submitAPI } from './api/api.js';
-import { saveToLocalStorage, loadFromLocalStorage } from './redux/booking/bookingSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveToLocalStorage, switchBookingConfirmation } from './redux/booking/bookingSlice';
 
 function App() {
   const dispatch = useDispatch();
   const localState = useSelector(state => state.booking.values);
   const [formData, setFormData] = useState ();
-  const [bookingConfirmed, setBookingConfirmed] =useState(false);
   const submitForm = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -28,13 +27,12 @@ function App() {
     console.log(data);
     dispatch(saveToLocalStorage(data))
     if(submitAPI(data)===true) {
-      setBookingConfirmed(true);
+      dispatch(switchBookingConfirmation());
     }
   }
   useEffect(() => {
     setFormData(localState);
   }, []);
-  console.log(formData)
   const [reservePressed, setReservePressed] = useState(false);
   const showBookings = () => {
     setReservePressed(!reservePressed);
@@ -43,10 +41,10 @@ function App() {
     <BrowserRouter>
       <Header/>
       <Routes> 
-        <Route path="/" element={<HomePage setBookingConfirmed={setBookingConfirmed} bookingConfirmed={bookingConfirmed} formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
+        <Route path="/" element={<HomePage formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/menu" element={<MenuPage />}></Route>
-        <Route path="/reservation" element={<BookingPage setBookingConfirmed={setBookingConfirmed} bookingConfirmed={bookingConfirmed} formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
+        <Route path="/reservation" element={<BookingPage formData={formData} submitForm={submitForm} reservePressed={reservePressed} showBookings={showBookings}/>}></Route>
         <Route path="/orderonline" element={<OnlineOrderPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/confirmation" element={<ConfirmedBookingPage />}></Route>

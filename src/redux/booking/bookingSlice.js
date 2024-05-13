@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const bookingSlice = createSlice({
   name: 'booking',
-  initialState: {values: { 'Reservation Date': '',
-  'Reservation Time': '',
-  'Number Of Diners': '',
-  },},
+  initialState: {
+            values: { 'Reservation Date': '',
+              'Reservation Time': '',
+              'Number Of Diners': '',
+              },
+            bookingConfirmed: false,},
   reducers: {
     loadFromLocalStorage: (state) => {
       try {
@@ -25,10 +27,13 @@ const bookingSlice = createSlice({
       } catch (error) {
         console.error('Error saving state to local storage:', error);
       }
+    },
+    switchBookingConfirmation: state => {
+      state.bookingConfirmed = !state.bookingConfirmed;
     }
   },
 });
 
-export const { loadFromLocalStorage, saveToLocalStorage } = bookingSlice.actions;
+export const { loadFromLocalStorage, saveToLocalStorage, switchBookingConfirmation } = bookingSlice.actions;
 
 export default bookingSlice.reducer;
