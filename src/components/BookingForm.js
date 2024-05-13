@@ -8,7 +8,7 @@ function BookingForm(props) {
   const reservationTime = useFormValue(props.formData["Reservation Time"] || '');
   const reservationDiners = useFormValue(props.formData["Number Of Diners"] || '');
   const reservationOccasion = useFormValue(props.formData["Occasion"] || '');
-  const reservationSeating = useFormValue(props.formData["Seating Options"] || '');
+  const [reservationSeating, setReservationSeating] = useState(props.formData["Seating Options"] || '');
   const [availableTimes, setAvailableTime] = useState([]);
   const [disableSubmit, setDisableSubmit] = useState(true);
   const [selectedDate, setSelectedDate] = useState(props.formData["Reservation Date"]);
@@ -78,15 +78,15 @@ function BookingForm(props) {
           <option value="Anniversary">Anniversary</option>
         </select>
         </label>
-      <fieldset {...reservationSeating} id="Seating Options" className='clr-white d-md-flex justify-content-between seating-option' required>
+      <fieldset id="Seating Options" className='clr-white d-md-flex justify-content-between seating-option' required>
         <div className='fw-bold fs-5 gap-5 mb-2'>Seating Options</div>
         <div className='d-flex justify-content-between align-items-center'>
           <label className='order-md-2 ms-md-2' htmlFor='seating-standard'>Standard</label>
-          <input className='order-md-1' id='seating-standard' type="radio" value="Standard" name="Seating Options"/>
+          <input className='order-md-1' id='seating-standard' type="radio" value="Standard" onChange={(e) => setReservationSeating(e.target.value)} checked={reservationSeating === 'Standard'} name="Seating Options"/>
         </div>
         <div className='d-flex justify-content-between align-items-center'>
           <label className='order-md-2 ms-md-2' htmlFor='seating-outside'>Outside</label>
-          <input className='order-md-1' id='seating-outside' type="radio" value="Outside" name="Seating Options"/>
+          <input className='order-md-1' id='seating-outside' type="radio" value="Outside" onChange={(e) => setReservationSeating(e.target.value)} checked={reservationSeating === 'Outside'} name="Seating Options"/>
         </div>
       </fieldset>
       {props.reservePressed ?

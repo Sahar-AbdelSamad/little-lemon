@@ -11,9 +11,13 @@ import LoginPage from './pages/LoginPage.js';
 import Footer from './components/Footer.js';
 import ConfirmedBookingPage from './pages/ConfirmedBookingPage.js';
 import { BrowserRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { submitAPI } from './api/api.js';
+import { saveToLocalStorage, loadFromLocalStorage } from './redux/booking/bookingSlice';
 
 function App() {
+  const dispatch = useDispatch();
+  const localState = useSelector(state => state.booking.values);
   const [formData, setFormData] = useState ();
   const [bookingConfirmed, setBookingConfirmed] =useState(false);
   const submitForm = (e) => {
@@ -22,21 +26,15 @@ function App() {
     setFormData(Object.fromEntries(formData.entries()));
     const data = Object.fromEntries(formData.entries());
     console.log(data);
+    dispatch(saveToLocalStorage(data))
     if(submitAPI(data)===true) {
       setBookingConfirmed(true);
     }
   }
   useEffect(() => {
-    const savedFormData = localStorage.getItem('formData');
-    if (savedFormData) {
-      setFormData(savedFormData);
-    }
+    setFormData(localState);
   }, []);
-
-  // Save form data to local storage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('formData', JSON.stringify(formData));
-  }, [formData]);
+  console.log(formData)
   const [reservePressed, setReservePressed] = useState(false);
   const showBookings = () => {
     setReservePressed(!reservePressed);
