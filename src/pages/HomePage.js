@@ -5,10 +5,10 @@ import CustomersSay from '../components/CustomersSay';
 import Chicago from '../components/Chicago';
 import './homePage.css';
 
-function Main(props) {
+function Main() {
   return (
     <main>
-      <Hero formData={props.formData} submitForm={props.submitForm}/>
+      <Hero/>
       <Highlights/>
       <CustomersSay/>
       <Chicago/>

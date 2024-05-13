@@ -11,36 +11,16 @@ import LoginPage from './pages/LoginPage.js';
 import Footer from './components/Footer.js';
 import ConfirmedBookingPage from './pages/ConfirmedBookingPage.js';
 import { BrowserRouter } from 'react-router-dom';
-import { submitAPI } from './api/api.js';
-import { useDispatch, useSelector } from 'react-redux';
-import { saveToLocalStorage, switchBookingConfirmation } from './redux/booking/bookingSlice';
 
 function App() {
-  const dispatch = useDispatch();
-  const localState = useSelector(state => state.booking.values);
-  const [formData, setFormData] = useState ();
-  const submitForm = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    setFormData(Object.fromEntries(formData.entries()));
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
-    dispatch(saveToLocalStorage(data))
-    if(submitAPI(data)===true) {
-      dispatch(switchBookingConfirmation());
-    }
-  }
-  useEffect(() => {
-    setFormData(localState);
-  }, []);
   return (
     <BrowserRouter>
       <Header/>
       <Routes> 
-        <Route path="/" element={<HomePage formData={formData} submitForm={submitForm}/>}></Route>
+        <Route path="/" element={<HomePage/>}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/menu" element={<MenuPage />}></Route>
-        <Route path="/reservation" element={<BookingPage formData={formData} submitForm={submitForm}/>}></Route>
+        <Route path="/reservation" element={<BookingPage/>}></Route>
         <Route path="/orderonline" element={<OnlineOrderPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/confirmation" element={<ConfirmedBookingPage />}></Route>

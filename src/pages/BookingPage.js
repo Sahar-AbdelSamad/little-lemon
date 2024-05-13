@@ -2,7 +2,7 @@ import React from 'react';
 import './bookingPage.css';
 import Bookings from '../components/Bookings';
 
-function BookingPage(props) {
+function BookingPage() {
   return (
     <div className='hero booking-page'>
       <div className='hero-section mw-50'>
@@ -13,7 +13,7 @@ function BookingPage(props) {
           <img className='restaurant-img w-50 pe-3' src={require('../assets/icons_assets/restaurant.jpg')} alt='Restaurant'/>
           <img className='restaurant-img w-50 ps-3' src={require('../assets/icons_assets/restaurant chef B.jpg')} alt="Restaurant's Chef"/>
         </div>
-        <Bookings formData={props.formData} submitForm={props.submitForm}/>
+        <Bookings/>
       </div>
     </div>
   );

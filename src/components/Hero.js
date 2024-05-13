@@ -4,13 +4,13 @@ import Bookings from './Bookings';
 import { useSelector, useDispatch } from 'react-redux';
 import { pressReservationBtnOnHomepage } from '../redux/booking/bookingSlice';
 
-function Hero(props) {
+function Hero() {
   const dispatch = useDispatch();
   const reservePressed = useSelector(state => state.booking.reserveButtonPressed);
   return (
     <section className='hero'>
       <div className='hero-section'>
-        {reservePressed ? <Bookings formData={props.formData} submitForm={props.submitForm}/> : <>
+        {reservePressed ? <Bookings/> : <>
             <h1 className='hero-title pt-md-3'>Little Lemon</h1>
             <h3 className='location'>Chicago</h3>
             <div className='hero-description d-flex'>

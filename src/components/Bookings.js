@@ -3,16 +3,16 @@ import BookingForm from '../components/BookingForm';
 import ConfirmedBookingPage from '../pages/ConfirmedBookingPage.js';
 import { useSelector } from 'react-redux';
 
-function Bookings(props) {
+function Bookings() {
   const bookingConfirmed = useSelector(state => state.booking.bookingConfirmed);
 
   if(bookingConfirmed) {
-    return ( <ConfirmedBookingPage formData={props.formData}/>)
+    return ( <ConfirmedBookingPage/>)
   } else {
   return (
     <>
       <div className='reservation-form pb-4'>
-        <BookingForm formData={props.formData} submitForm={props.submitForm}/>
+        <BookingForm/>
       </div>
     </>
   );

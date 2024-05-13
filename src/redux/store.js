@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import BookingReducer from './booking/bookingSlice';
-import { loadFromLocalStorage } from './booking/bookingSlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,4 +11,4 @@ export const store = configureStore({
 // store.subscribe(() => saveToLocalStorage(store.getState()));
 
 // Load state from local storage when the app starts
-store.dispatch(loadFromLocalStorage());
+//store.dispatch(loadFromLocalStorage());
