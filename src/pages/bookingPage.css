@@ -51,6 +51,7 @@
   border: 1px solid var(--secondary-color-white);
   padding: 6px 9px;
   margin-left: 95px;
+  width: 133px;
 }
 
 @media screen and (min-width:768px) {
