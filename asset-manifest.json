@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/little-lemon/static/css/main.61a2abe4.css",
+    "main.js": "/little-lemon/static/js/main.b4e7497f.js",
+    "static/media/restaurant chef B.jpg": "/little-lemon/static/media/restaurant chef B.4b4c2d26b514db32e8fc.jpg",
+    "static/media/greek salad.jpg": "/little-lemon/static/media/greek salad.bed423a1fab5b210e347.jpg",
+    "static/media/restauranfood.jpg": "/little-lemon/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
+    "static/media/restaurant.jpg": "/little-lemon/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
+    "static/media/margherita_pizza.jpg": "/little-lemon/static/media/margherita_pizza.84c2fc2805293867af98.jpg",
+    "static/media/tiramisu.jpg": "/little-lemon/static/media/tiramisu.e7748d4303647f395e0b.jpg",
+    "static/media/spaghetti_carbonara.jpg": "/little-lemon/static/media/spaghetti_carbonara.bcc8caab24561c0cb403.jpg",
+    "static/media/Logo.svg": "/little-lemon/static/media/Logo.6c132dfefa69396bba43.svg",
+    "static/media/bruchetta.jpg": "/little-lemon/static/media/bruchetta.a4e09a67ec07d5ef0d5f.jpg",
+    "static/media/lemon_dessert.jpg": "/little-lemon/static/media/lemon_dessert.887eacf36da4cd2fa423.jpg",
+    "index.html": "/little-lemon/index.html",
+    "static/media/Basket.svg": "/little-lemon/static/media/Basket.fae9b50adb46a3bfa927.svg",
+    "main.61a2abe4.css.map": "/little-lemon/static/css/main.61a2abe4.css.map",
+    "main.b4e7497f.js.map": "/little-lemon/static/js/main.b4e7497f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61a2abe4.css",
+    "static/js/main.b4e7497f.js"
+  ]
+}
